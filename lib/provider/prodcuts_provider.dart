@@ -38,7 +38,11 @@ class ProducsProvider with ChangeNotifier {
   ];
 
   List<Product> get list {
-    return [..._list];
+    return _list;
+  }
+
+  List<Product> get favoriteItems {
+    return _list.where((element) => element.isFavorite).toList();
   }
 
   void addProdcut() {
